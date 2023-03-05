@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Whale's blog">
+    <title>鲸鲸世界</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 60px;
+            background-color: #20246b;
+        }
+
+        /*导航栏整体样式*/
+        .tou{
+            position:fixed;
+            top:0;
+            left:0;
+            padding: 24px 100px;
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.5s;
+            box-shadow: 0 10px 10px 0 rgba(0,0,0,.2);
+            z-index: 999;
+        }
+
+         /*导航栏左侧样式*/
+        .logo{
+            position:relative;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color:rgb(223, 234, 242)
+        }
+
+        /*可用于替换的可爱表情：☾˚‧₊ ⋆︎   ･✦･*/
+        .logo::before{
+            content: '･✦･ ';
+            position:absolute;
+            left:-50px;
+            width:-15px;
+            height: 30px;
+        }
+
+
+        /*导航栏右侧标签样式*/
+        .biao{
+            position:relative;
+            display:flex;
+            justify-content:center;
+            align-content: center;
+            list-style: none;
+        }
+
+        .biao li{
+            position:relative;
+            font-size:x-large
+        }
+
+        .biao a{
+            position:relative;
+            margin:0 10px;
+            font-size: 18px;
+            font-family: 'Microsoft YaHei';
+            font-weight: bold;
+            color:rgb(223, 234, 242);
+            text-decoration: none;
+
+        }
+
+        .bian{
+            padding:15px 100px;
+            background-color: #20246b;
+            opacity:0.95
+        }
+
+        .footer,.bian .logo, .tou.bian a{
+            color:rgb(252,247,247)
+        }
+
+        /*导航栏的触碰转换(变前与变后）*/
+        li a:hover {
+                color: #7ad6f0;
+            }
+
+        .biao a:hover {
+                color: #7ad6f0;
+            }
+
+
+
+        /*背景图样式*/
+        .beijing{
+            position:absolute;
+            top:0;
+            left: 0;
+            width:100%;
+            height:100%;
+            min-width:1000px;
+            z-index:-10;
+            zoom:1;
+            background-color: #fff;
+            background-image: url(./image/gulugulu.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+
+        /*字体*/
+        p, h1,li{
+            font-family:Microsoft YaHei;
+            }
+
+            h1 {
+            color:aliceblue
+            }
+
+        
+            /*右侧的条条*/
+            ::-webkit-scrollbar{
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-thumb{
+            
+        background: linear-gradient(#20246b,rgb(47, 145, 237));     
+        border-radius: 5px;
+          transition: 1s;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            background: linear-gradient(rgb(47, 145, 237),#20246b);     
+
+        }
+
+        body {
+            padding-bottom: 50px;
+        }
+ 
+        
+        .footer {
+            position:relative;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 160px;
+            background-color: #20246b;
+            z-index: 9999;
+            justify-content: space-between;
+            align-items: center;
+            text-align:center;
+            line-height:center;
+        }
+
+        .text{
+            font-family: 'Microsoft YaHei';
+            display: inline-block;
+          position: relative;
+          font-size: 55px;
+          height: 60px;
+          line-height: 60px;
+          color: #20246b;
+        }
+        .text::after{
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 5px;
+            height: 50px;
+            width: 3px;     
+            background-color: #fff;
+            animation: san 0.5s steps(1) infinite;
+        }
+        @keyframes san{
+            0%,100%{
+                background-color: #fff;
+            }
+            50%{
+               background-color: transparent;
+            }
+
+        }
+
+        .kuangblank{
+            border-radius: 50px;
+                margin: auto;
+                width: 100%;
+                height:150px;
+                padding: 25px;
+                padding-left:140px;
+                padding-right:140px;
+                justify-content:center;
+                position:relative;
+                text-align: center;
+        }
+
+
+    </style>
+
+
+     <!--！！！！！！！！！！！！！！！网站计时！！！！！！！！！！！！！！！！-->
+    <script>
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }</script>
+    <script type="text/javascript" language="javascript">
+    function setTime() {
+        var create_time = Math.round(new Date(Date.UTC(2023, 01, 24, 11, 42, 23)).getTime() / 1000);
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = '鲸鲸世界已经在可观测海域艰难运行了：' + currentTime[0] + '年 ' + currentTime[1] + '天 '
+                + currentTime[2] + '时 ' + currentTime[3] + '分 ' + currentTime[4]
+                + '秒';
+        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }    setInterval(setTime, 1000);
+    </script>
+     <!--！！！！！！！！！！！！！！！网站计时！！！！！！！！！！！！！！！！-->
+
+
+</head>
+
+
+<body>
+    <!--背景图-->
+    <div class="beijing"></div>
+
+    <!--导航栏-->
+    <div class="tou">
+        <sapn class="logo">鲸鲸世界。</sapn>
+        <ul class="biao">
+            <li><a href="./gulugulu.html">☾˚‧₊ ⋆︎ </a></li>
+            <li><a href="./yinyue.html">音乐</a></li>
+            <li><a href="./youxi.html">游戏</a></li>
+            <li><a href="./guanyu.html">关于</a></li>
+        </ul>
+    </div>
+
+    <script>
+        window.addEventListener('scroll',function(){
+            let tou=document.querySelector('.tou');
+
+            /* tou.classlist.toggle("bian",window.scrollY>0;*/
+            if(window.scrollY>0)
+            {
+                tou.classList.add("bian");
+            }else{
+                tou.classList.remove("bian");
+            }
+        })
+
+
+    </script>
+
+
+
+
+<div class="kuangblank"></div>
+<div class="kuangblank"></div>
+<div class="kuangblank">
+    <h1><span class="text" ></span> </h1>
+    <script>
+        const text = document.querySelector('.text');
+        const txt  =["欢迎来到鲸鲸世界!✧*｡ (ˊᗜˋ*) ✧* ","您可以停留在此页面吐泡泡 ☾˚‧₊ ⋆︎","请深吸一口气！","咕噜咕噜 ☾˚‧₊ ⋆︎","咕噜咕噜咕噜咕噜咕噜 ☾˚‧₊ ⋆︎","没气啦————！"]; 
+        
+        var index=0;
+        var xiaBiao= 0;
+        var huan = true;
+     
+        setInterval(function(){
+           
+            if(huan){      
+                text.innerHTML = txt[xiaBiao].slice(0,++index);
+                console.log(index);
+            }
+            else{
+                text.innerHTML = txt[xiaBiao].slice(0,index--);
+                console.log(index);
+            }
+
+            if(index==txt[xiaBiao].length+3)
+            {
+                huan = false;
+            }
+            else if(index<0)
+            {
+                index = 0;
+                huan = true;
+                xiaBiao++;
+                if(xiaBiao>=txt.length)
+                {
+                    xiaBiao=0; 
+                }
+            }
+
+        },200)
+
+    </script>
+    </div>
+
+    
+
+
+        <h1 align="center">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>  
+        </h1>
+
+
+
+            <div class="footer">
+                <p align="center">
+                    <br>
+                     再往下就是深海啦
+                    <br>
+                    <br>
+                    <span id="htmer_time"></span></font>
+                    <br>
+                    <br>
+                     Copyright © 2023 鲸鲸世界
+
+
+
+                </p>
+            </div>
+
+
+
+
+
+</body>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Whale's blog">
+    <title>鲸鲸世界</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height:100vh
+        }
+
+        /*导航栏整体样式*/
+        .tou{
+            position:fixed;
+            top:0;
+            left:0;
+            padding: 24px 100px;
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.5s;
+            box-shadow: 0 10px 10px 0 rgba(0,0,0,.2);
+            z-index: 999;
+        }
+
+         /*导航栏左侧样式*/
+        .logo{
+            position:relative;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color:rgb(223, 234, 242)
+        }
+
+        /*可用于替换的可爱表情：☾˚‧₊ ⋆︎   ･✦･*/
+        .logo::before{
+            content: '･✦･ ';
+            position:absolute;
+            left:-50px;
+            width:-15px;
+            height: 30px;
+        }
+
+
+        /*导航栏右侧标签样式*/
+        .biao{
+            position:relative;
+            display:flex;
+            justify-content:center;
+            align-content: center;
+            list-style: none;
+        }
+
+        .biao li{
+            position:relative;
+            font-size:x-large
+        }
+
+        .biao a{
+            position:relative;
+            margin:0 10px;
+            font-size: 18px;
+            font-family: 'Microsoft YaHei';
+            font-weight: bold;
+            color:rgb(223, 234, 242);
+            text-decoration: none;
+
+        }
+
+        .bian{
+            padding:15px 100px;
+            background-color: #123c28;
+            opacity:0.95
+        }
+
+        .footer,.bian .logo, .tou.bian a{
+            color:rgb(252,247,247)
+        }
+
+        .footer{
+            color:rgb(252,247,247);
+        }
+
+        /*导航栏的触碰转换(变前与变后）*/
+        li a:hover {
+                color: #efe270;
+            }
+
+        .biao a:hover {
+                color: #efe270;
+            }
+
+
+
+        /*背景图样式*/
+        .beijing{
+            position:absolute;
+            top:0;
+            left: 0;
+            width:100%;
+            height: 400px;
+            min-width:1000px;
+            z-index:-10;
+            zoom:1;
+            background-color: #fff;
+            background-image: url(./image/guanyu.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 10%;
+        }
+        
+
+        /*字体*/
+        p, h1,li{
+            font-family:Microsoft YaHei;
+            }
+
+            h1,h2,li {
+            color:aliceblue
+            }
+
+            h1,h2 {
+            color:aliceblue
+            }
+
+            li{
+                font-size:25px;
+                list-style: none;
+                color:aliceblue;
+                letter-spacing:4px
+            }
+
+
+
+
+             /*右侧的条条*/
+            ::-webkit-scrollbar{
+            width: 12px;
+        }
+        ::-webkit-scrollbar-thumb{
+            
+        background: linear-gradient(#123c28,rgb(212, 183, 17));     
+        border-radius: 5px;
+          transition: 1s;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            background: linear-gradient(rgb(212, 183, 17),#123c28);     
+
+        }
+
+        body {
+            padding-bottom: 50px;
+        }
+ 
+        
+        .footer {
+            position:relative;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 160px;
+            background-color: #2c4539;
+            z-index: 9999;
+            justify-content: space-between;
+            align-items: center;
+            text-align:center;
+            line-height:center;
+        }
+
+        body{
+            background-color: #2c4539;
+        }
+
+
+        /*空白框的格式*/
+        .kuangblank{
+            border-radius: 50px;
+                margin: auto;
+                width: 60%;
+                height:10px;
+                padding: 25px;
+                padding-left:140px;
+                padding-right:140px;
+                justify-content:center;
+                position:relative;
+        }
+
+     
+
+    </style>
+
+
+     <!--！！！！！！！！！！！！！！！网站计时！！！！！！！！！！！！！！！！-->
+    <script>
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }</script>
+    <script type="text/javascript" language="javascript">
+    function setTime() {
+        var create_time = Math.round(new Date(Date.UTC(2023, 01, 24, 11, 42, 23)).getTime() / 1000);
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = '鲸鲸世界已经在可观测海域艰难运行了：' + currentTime[0] + '年 ' + currentTime[1] + '天 '
+                + currentTime[2] + '时 ' + currentTime[3] + '分 ' + currentTime[4]
+                + '秒';
+        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }    setInterval(setTime, 1000);
+    </script>
+     <!--！！！！！！！！！！！！！！！网站计时！！！！！！！！！！！！！！！！-->
+
+
+</head>
+
+
+<body>
+    <!--背景图-->
+    <div class="beijing"></div>
+
+
+    <!--导航栏-->
+    <div class="tou">
+        <sapn class="logo">鲸鲸世界。</sapn>
+        <ul class="biao">
+            <li><a href="./gulugulu.html">☾˚‧₊ ⋆︎ </a></li>
+            <li><a href="./yinyue.html">音乐</a></li>
+            <li><a href="./youxi.html">游戏</a></li>
+            <li><a href="./guanyu.html">关于</a></li>
+        </ul>
+    </div>
+
+    <script>
+        window.addEventListener('scroll',function(){
+            let tou=document.querySelector('.tou');
+
+            /* tou.classlist.toggle("bian",window.scrollY>0;*/
+            if(window.scrollY>0)
+            {
+                tou.classList.add("bian");
+            }else{
+                tou.classList.remove("bian");
+            }
+        })
+
+
+    </script>
+
+    
+
+
+        <h1 align="center">
+            <br>
+            <br>
+            <br>
+            <br>
+            关&nbsp;&nbsp;于&nbsp;&nbsp;鲸&nbsp;&nbsp;鲸<br>———
+            <br>
+            <br>
+        </h1>
+
+           
+
+                <div class="text" style="text-align:left;
+                border-radius: 50px;
+                margin: auto;
+                width: 60%;
+                height:1300px;
+                padding: 60px;
+                padding-left:140px;
+                padding-right:140px;
+                justify-content:center;
+                background-color: rgb(136, 131, 78);
+                position:relative;
+                box-shadow: 0 0px 25px 0.5px rgba(31, 31, 31, 0.8);">
+                        <br> 
+                        <br>
+                        <li align="center" style="font-size: 30px;">&nbsp;&nbsp;&nbsp;<strong>可&nbsp;公&nbsp;开&nbsp;的&nbsp;信&nbsp;息</strong>&nbsp;&nbsp;
+                        </li>
+                        <br> 
+                        <br>
+                        <br>
+                        <li>姓名: &nbsp;鲸鲸
+                        </li>
+                        <br>
+                        <li>学号: &nbsp;22448004</li>
+                        <br>
+                        <li>邮箱: &nbsp;22448004@life.hkbu.edu.hk</li>
+                        <br>
+                        <li>喜欢的食物: &nbsp;蛋包饭</li>
+                        <br> 
+                        <li>喜欢的季节: &nbsp;春季</li>
+                        <br>
+                        <li>喜欢的颜色: &nbsp;蓝色和绿色</li>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <li align="center" style="font-size: 30px;">&nbsp;&nbsp;&nbsp;<strong>关&nbsp;于&nbsp;本&nbsp;站</strong>&nbsp;&nbsp;&nbsp;
+                        </li>
+                        <br> 
+                        <br>
+                        <li style="line-height:1.8em">旅行？活着就是旅行。我从一天去到另一天，一如从一个车站去到另一个车站，乘坐我身体或命运的火车，将头探出窗户，看街道，看广场，看人们的脸和姿态，这些总是相同，又总是不同，如同风景。</li>
+                        <br> <li>“面对世界永恒的新奇，我感到我每一刻都是新生。”</li>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <li align="right">本站成立于2023年2月24日&nbsp;</li>
+                </div>
+
+                <div class="kuangblank"></div>
+                <div class="kuangblank"></div>
+
+
+
+            <div class="footer">
+                <p align="center">
+                    <br>
+                     再往下就是深海啦
+                    <br>
+                    <br>
+                    <span id="htmer_time"></span></font>
+                    <br>
+                    <br>
+                     Copyright © 2023 鲸鲸世界
+
+
+
+                </p>
+            </div>
+
+
+
+
+
+</body>

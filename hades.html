@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Whale's blog">
+    <title>鲸鲸世界</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height:100vh
+        }
+
+        /*导航栏整体样式*/
+        .tou{
+            position:fixed;
+            top:0;
+            left:0;
+            padding: 24px 100px;
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.5s;
+            box-shadow: 0 10px 10px 0 rgba(0,0,0,.2);
+            z-index: 999;
+        }
+
+         /*导航栏左侧样式*/
+        .logo{
+            position:relative;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color:rgb(223, 234, 242)
+        }
+
+        /*可用于替换的可爱表情：☾˚‧₊ ⋆︎   ･✦･*/
+        .logo::before{
+            content: '･✦･ ';
+            position:absolute;
+            left:-50px;
+            width:-15px;
+            height: 30px;
+        }
+
+
+        /*导航栏右侧标签样式*/
+        .biao{
+            position:relative;
+            display:flex;
+            justify-content:center;
+            align-content: center;
+            list-style: none;
+        }
+
+        .biao li{
+            position:relative;
+            font-size:x-large
+        }
+
+        .biao a{
+            position:relative;
+            margin:0 10px;
+            font-size: 18px;
+            font-family: 'Microsoft YaHei';
+            font-weight: bold;
+            color:rgb(223, 234, 242);
+            text-decoration: none;
+
+        }
+
+        .bian{
+            padding:15px 100px;
+            background-color: #20246b;
+            opacity:0.95
+        }
+
+        .footer,.bian .logo, .tou.bian a{
+            color:rgb(252,247,247)
+        }
+
+        /*导航栏的触碰转换(变前与变后）*/
+        li a:hover {
+                color: #7ad6f0;
+            }
+
+        .biao a:hover {
+                color: #7ad6f0;
+            }
+
+
+
+        /*背景图样式*/
+        .beijing{
+            position:absolute;
+            top:0;
+            left: 0;
+            width:100%;
+            height: 400px;
+            min-width:1000px;
+            z-index:-10;
+            zoom:1;
+            background-color: #fff;
+            background-image: url(./image/hades_before.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50%;
+        }
+        
+
+        /*字体*/
+        p, h1,li{
+            font-family:Microsoft YaHei;
+            }
+
+            h1,h2 {
+            color:aliceblue;
+            font-size:50px;
+            text-shadow: 2px 2px 4px #000000;
+            }
+
+            li{
+                font-size:30px;
+                list-style: none;
+                color:aliceblue;
+                letter-spacing:4px;
+                text-shadow: 2px 2px 4px #000000;
+            }
+
+            .zhengwen{
+                font-size:25px;
+                list-style: none;
+                color:aliceblue;
+                letter-spacing:4px;
+                text-shadow: 2px 2px 4px #000000;
+
+            }
+
+
+
+
+             /*右侧的条条*/
+            ::-webkit-scrollbar{
+            width: 12px;
+            }
+            ::-webkit-scrollbar-thumb{
+            
+            background: linear-gradient(#20246b,rgb(212, 17, 189));     
+            border-radius: 5px;
+            transition: 1s;
+            }
+            ::-webkit-scrollbar-thumb:hover{
+            background: linear-gradient(rgb(105, 17, 212),#20246b);     
+
+            }
+
+            body {
+            padding-bottom: 50px;
+            }
+ 
+        
+        .footer {
+            position:relative;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 160px;
+            background-color: #262431;
+            z-index: 9999;
+            justify-content: space-between;
+            align-items: center;
+            text-align:center;
+            line-height:center;
+        }
+
+        body{
+            background-color: #262431;
+        }
+
+
+        /*空白框的格式*/
+        .kuangblank{
+            border-radius: 50px;
+                margin: auto;
+                width: 60%;
+                height:10px;
+                padding: 25px;
+                padding-left:140px;
+                padding-right:140px;
+                justify-content:center;
+                position:relative;
+        }
+
+        
+         /*celeste*/
+       .kuangceleste{
+        text-align:left;
+                border-radius: 50px;
+                margin: auto;
+                width: 60%;
+                height:2600px;
+                padding: 15px;
+                padding-left:95px;
+                padding-right:80px;
+                justify-content:center;
+                background-color: rgb(8, 74, 59);
+                background-size: cover;
+                position:relative;
+                box-shadow: 0 0px 25px 0.5px rgba(77, 78, 80, 0.8);
+        }
+
+        .kuangceleste:hover{
+                box-shadow: 0 0px 40px 1px rgba(255, 255, 255, 0.8);
+                background-position: 50%;
+        }
+
+
+        
+
+        .biaoti a{
+            position:relative;
+            margin:0 10px;
+            font-family: 'Microsoft YaHei';
+            font-weight: bold;
+            color:aliceblue;
+            text-decoration: none;
+            font-size: 45px;
+        }
+
+        .biaoti a:hover {
+                color: #f4c3ef;
+            }
+
+
+
+     
+
+    </style>
+
+
+     <!--！！！！！！！！！！！！！！！网站计时！！！！！！！！！！！！！！！！-->
+    <script>
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }</script>
+    <script type="text/javascript" language="javascript">
+    function setTime() {
+        var create_time = Math.round(new Date(Date.UTC(2023, 01, 24, 11, 42, 23)).getTime() / 1000);
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = '鲸鲸世界已经在可观测海域艰难运行了：' + currentTime[0] + '年 ' + currentTime[1] + '天 '
+                + currentTime[2] + '时 ' + currentTime[3] + '分 ' + currentTime[4]
+                + '秒';
+        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }    setInterval(setTime, 1000);
+    </script>
+     <!--！！！！！！！！！！！！！！！网站计时！！！！！！！！！！！！！！！！-->
+
+
+</head>
+
+
+<body>
+    <!--背景图-->
+    <div class="beijing"></div>
+
+
+    <!--导航栏-->
+    <div class="tou">
+        <sapn class="logo">鲸鲸世界。</sapn>
+        <ul class="biao">
+            <li><a href="./gulugulu.html">☾˚‧₊ ⋆︎ </a></li>
+            <li><a href="./yinyue.html">音乐</a></li>
+            <li><a href="./youxi.html">游戏</a></li>
+            <li><a href="./guanyu.html">关于</a></li>
+        </ul>
+    </div>
+
+    <script>
+        window.addEventListener('scroll',function(){
+            let tou=document.querySelector('.tou');
+
+            /* tou.classlist.toggle("bian",window.scrollY>0;*/
+            if(window.scrollY>0)
+            {
+                tou.classList.add("bian");
+            }else{
+                tou.classList.remove("bian");
+            }
+        })
+
+
+    </script>
+
+    
+
+
+        <h1 align="center">
+            <br>
+            <br>
+            <br>
+            从地狱杀出一条血路 — Hades<br>———<br>
+            <li align="right">“奥林匹斯，我已收到这条消息。”
+            </li>
+        </h1>
+
+        <div class="kuangblank"></div>
+        <div class="kuangblank"></div>
+
+        
+
+
+                <div class="kuangceleste">
+                        <br> 
+                        <br>
+                        <br><iframe style="justify-content:center;display: block; margin: 0 auto;" width="100%" height="17%" src="https://www.youtube.com/embed/mD8x5xLHRho" title="Hades - Launch Trailer - Nintendo Switch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="zhengwen">
+                            <br>Hades 是一款高自由度砍杀型地下城游戏，融合了 Supergiant 众多经典作品的传统特色，其中包括战斗节奏较快的《Bastion》、游戏环境丰富多彩，细节深入的《Transistor》以及随着游戏人物推进，故事情节跌宕起伏的《Pyre》。
+                            <br>
+                            <br>
+                            <br>
+                            <br><strong>杀出地狱</strong>
+                            <br>
+                            <br>作为不朽的冥界王子，你将挥舞着来自奥林匹斯山充满神力的各种武器，在险恶的旅途中挣脱死神的魔爪，变得愈发强大，每次逃离行动都将开启更多精彩的故事。
+                            <br>
+                            <br>
+                            <br>
+                            <br><strong>释放来自奥林匹斯山的怒火</strong>
+                            <br>
+                            <br>奥林匹斯众神将为你提供庇佑！在和宙斯、雅典娜、波塞冬和更多大神的奇遇中，获得数十种强大恩赐，让你的战斗力直线飙升。踏上逃离黑暗地狱的征程，各色游戏人物陪你一路降妖伏魔。
+                            <br>
+                            <br>
+                            <br>
+                            <br><strong>结交神鬼妖怪各路朋友</strong>
+                            <br>
+                            <br>一众性格鲜明的传奇人物都在期待你的登场！加深和他们的关系，并体验数百个奇特冒险故事，逐渐了解这个宗系庞杂的神族中不为人知的各种骇人秘闻。
+                            <br>
+                            <br>
+                            <br>
+                            <br><strong>惊险刺激，百玩不厌</strong>
+                            <br>
+                            <br>每次深入到变化多端的冥界，你都会获得新的惊喜，冥界的终极守护者会对你“颇为记挂”。利用强大的夜之圣镜，永久加强自己的能力，下次可以更轻松地逃离冥界苦海。
+                            <br>
+                            <br>
+                            <br>
+                            <br><strong>挑战无限可能</strong>
+                            <br>
+                            <br>永久升级意味着你不必成为神，就可以体验激动人心的战斗和扣人心弦的故事。不过，如果你自认堪比神抵，那就可以加大挑战难度，体验更加惊险刺激的行动，看看身经百战的你是否经得住这次的考验。
+                            <br>
+                            <br>
+                            <br>
+                            <br><strong>经典的 SUPERGIANT 风格</strong>
+                            <br>
+                            <br>Supergiant 各类游戏内容丰富、大气磅礴以及游戏和故事叙述相结合的特有风格，在这款游戏中表现得淋漓尽致：壮观的手绘冥界环境和令人胆寒的原创配乐，营造冥界阴森恐怖的氛围，让人身临其境。
+                            <br>
+                            </p>
+                </div>
+
+
+                <div class="kuangblank"></div>
+                <div class="kuangblank"></div>
+
+
+                
+
+
+
+            <div class="footer">
+                <p align="center">
+                    <br>
+                     再往下就是深海啦
+                    <br>
+                    <br>
+                    <span id="htmer_time"></span></font>
+                    <br>
+                    <br>
+                     Copyright © 2023 鲸鲸世界
+
+
+
+                </p>
+            </div>
+
+
+
+
+
+</body>

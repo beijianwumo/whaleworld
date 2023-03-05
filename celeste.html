@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Whale's blog">
+    <title>鲸鲸世界</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height:100vh
+        }
+
+        /*导航栏整体样式*/
+        .tou{
+            position:fixed;
+            top:0;
+            left:0;
+            padding: 24px 100px;
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.5s;
+            box-shadow: 0 10px 10px 0 rgba(0,0,0,.2);
+            z-index: 999;
+        }
+
+         /*导航栏左侧样式*/
+        .logo{
+            position:relative;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color:rgb(223, 234, 242)
+        }
+
+        /*可用于替换的可爱表情：☾˚‧₊ ⋆︎   ･✦･*/
+        .logo::before{
+            content: '･✦･ ';
+            position:absolute;
+            left:-50px;
+            width:-15px;
+            height: 30px;
+        }
+
+
+        /*导航栏右侧标签样式*/
+        .biao{
+            position:relative;
+            display:flex;
+            justify-content:center;
+            align-content: center;
+            list-style: none;
+        }
+
+        .biao li{
+            position:relative;
+            font-size:x-large
+        }
+
+        .biao a{
+            position:relative;
+            margin:0 10px;
+            font-size: 18px;
+            font-family: 'Microsoft YaHei';
+            font-weight: bold;
+            color:rgb(223, 234, 242);
+            text-decoration: none;
+
+        }
+
+        .bian{
+            padding:15px 100px;
+            background-color: #20246b;
+            opacity:0.95
+        }
+
+        .footer,.bian .logo, .tou.bian a{
+            color:rgb(252,247,247)
+        }
+
+        /*导航栏的触碰转换(变前与变后）*/
+        li a:hover {
+                color: #7ad6f0;
+            }
+
+        .biao a:hover {
+                color: #7ad6f0;
+            }
+
+
+
+        /*背景图样式*/
+        .beijing{
+            position:absolute;
+            top:0;
+            left: 0;
+            width:100%;
+            height: 400px;
+            min-width:1000px;
+            z-index:-10;
+            zoom:1;
+            background-color: #fff;
+            background-image: url(./image/celeste_after.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50%;
+        }
+        
+
+        /*字体*/
+        p, h1,li{
+            font-family:Microsoft YaHei;
+            }
+
+            h1,h2 {
+            color:aliceblue;
+            font-size:50px;
+            text-shadow: 2px 2px 4px #000000;
+            }
+
+            li{
+                font-size:30px;
+                list-style: none;
+                color:aliceblue;
+                letter-spacing:4px;
+                text-shadow: 2px 2px 4px #000000;
+            }
+
+            .zhengwen{
+                font-size:25px;
+                list-style: none;
+                color:aliceblue;
+                letter-spacing:4px;
+                text-shadow: 2px 2px 4px #000000;
+
+            }
+
+
+
+
+             /*右侧的条条*/
+            ::-webkit-scrollbar{
+            width: 12px;
+            }
+            ::-webkit-scrollbar-thumb{
+            
+            background: linear-gradient(#20246b,rgb(212, 17, 189));     
+            border-radius: 5px;
+            transition: 1s;
+            }
+            ::-webkit-scrollbar-thumb:hover{
+            background: linear-gradient(rgb(105, 17, 212),#20246b);     
+
+            }
+
+            body {
+            padding-bottom: 50px;
+            }
+ 
+        
+        .footer {
+            position:relative;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 160px;
+            background-color: #262431;
+            z-index: 9999;
+            justify-content: space-between;
+            align-items: center;
+            text-align:center;
+            line-height:center;
+        }
+
+        body{
+            background-color: #262431;
+        }
+
+
+        /*空白框的格式*/
+        .kuangblank{
+            border-radius: 50px;
+                margin: auto;
+                width: 60%;
+                height:10px;
+                padding: 25px;
+                padding-left:140px;
+                padding-right:140px;
+                justify-content:center;
+                position:relative;
+        }
+
+        
+         /*celeste*/
+       .kuangceleste{
+        text-align:left;
+                border-radius: 50px;
+                margin: auto;
+                width: 60%;
+                height:1700px;
+                padding: 15px;
+                padding-left:95px;
+                padding-right:80px;
+                justify-content:center;
+                background-color: rgb(54, 8, 74);
+                background-size: cover;
+                position:relative;
+                box-shadow: 0 0px 25px 0.5px rgba(77, 78, 80, 0.8);
+        }
+
+        .kuangceleste:hover{
+                box-shadow: 0 0px 40px 1px rgba(255, 255, 255, 0.8);
+                background-position: 50%;
+        }
+
+
+        
+
+        .biaoti a{
+            position:relative;
+            margin:0 10px;
+            font-family: 'Microsoft YaHei';
+            font-weight: bold;
+            color:aliceblue;
+            text-decoration: none;
+            font-size: 45px;
+        }
+
+        .biaoti a:hover {
+                color: #f4c3ef;
+            }
+
+
+
+     
+
+    </style>
+
+
+     <!--！！！！！！！！！！！！！！！网站计时！！！！！！！！！！！！！！！！-->
+    <script>
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }</script>
+    <script type="text/javascript" language="javascript">
+    function setTime() {
+        var create_time = Math.round(new Date(Date.UTC(2023, 01, 24, 11, 42, 23)).getTime() / 1000);
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = '鲸鲸世界已经在可观测海域艰难运行了：' + currentTime[0] + '年 ' + currentTime[1] + '天 '
+                + currentTime[2] + '时 ' + currentTime[3] + '分 ' + currentTime[4]
+                + '秒';
+        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }    setInterval(setTime, 1000);
+    </script>
+     <!--！！！！！！！！！！！！！！！网站计时！！！！！！！！！！！！！！！！-->
+
+
+</head>
+
+
+<body>
+    <!--背景图-->
+    <div class="beijing"></div>
+
+
+    <!--导航栏-->
+    <div class="tou">
+        <sapn class="logo">鲸鲸世界。</sapn>
+        <ul class="biao">
+            <li><a href="./gulugulu.html">☾˚‧₊ ⋆︎ </a></li>
+            <li><a href="./yinyue.html">音乐</a></li>
+            <li><a href="./youxi.html">游戏</a></li>
+            <li><a href="./guanyu.html">关于</a></li>
+        </ul>
+    </div>
+
+    <script>
+        window.addEventListener('scroll',function(){
+            let tou=document.querySelector('.tou');
+
+            /* tou.classlist.toggle("bian",window.scrollY>0;*/
+            if(window.scrollY>0)
+            {
+                tou.classList.add("bian");
+            }else{
+                tou.classList.remove("bian");
+            }
+        })
+
+
+    </script>
+
+    
+
+
+        <h1 align="center">
+            <br>
+            <br>
+            <br>
+            攀登斯莱特斯山 — Celeste<br>———<br>
+            <li align="right">“因为山就在那里。”
+            </li>
+        </h1>
+
+        <div class="kuangblank"></div>
+        <div class="kuangblank"></div>
+
+        
+
+
+                <div class="kuangceleste">
+                        <br> 
+                        <br>
+                        <br><iframe style="justify-content:center;display: block; margin: 0 auto;" width="100%" height="24%" src="https://www.youtube.com/embed/70d9irlxiB4" title="Celeste - Launch Trailer | PS4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="zhengwen">《Celeste》是经典多人游戏《TowerFall》的制作者推出的又一力作。这款手工打造的平台游戏节奏极为紧凑，玩家需要在 Madeline 攀登塞莱斯特山 (Celeste Mountain) 的旅程中，帮助她克服内心深处的恐惧。
+                            <br>
+                            <br>
+                            <br> ● 这是一段单人冒险旅程，由像妈妈口吻一样的叙事推动，其中有魅力非凡的角色和关于自我发现的感人故事待玩家发现
+                            <br>
+                            <br> ● 对于这条宏伟的山脉，设计者设置了超过 700 个场景的硬核平台挑战，其中还有众多诡异的秘密供探索
+                            <br>
+                            <br> ● 残酷的隐藏故事线只为最勇敢的登山者打造，等待着玩家解锁
+                            <br>
+                            <br> ● 独立游戏节 (IGF)“卓越音效奖”入围作品，包含超过 2 小时的原创音乐，超炫的现场钢琴和富有节奏感的合成节拍令人耳目一新
+                            <br>
+                            <br> ● 馅饼
+                            <br>
+                            <br>
+                            <br> 游戏控制简单，上手容易，只需跳跃、空中突进和攀登即可，但若想掌握高超的技巧成为大师也绝非易事，玩家需要从每一次失败中吸取教训，不断进步。光速重生将助您勇攀高峰，挑战千难万险，解开神秘山峰的谜团。
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            就是这样，Madeline。保持呼吸。你能行。</p>
+                </div>
+
+
+                <div class="kuangblank"></div>
+                <div class="kuangblank"></div>
+
+
+                
+
+
+
+            <div class="footer">
+                <p align="center">
+                    <br>
+                     再往下就是深海啦
+                    <br>
+                    <br>
+                    <span id="htmer_time"></span></font>
+                    <br>
+                    <br>
+                     Copyright © 2023 鲸鲸世界
+
+
+
+                </p>
+            </div>
+
+
+
+
+
+</body>

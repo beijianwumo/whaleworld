@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Whale's blog">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+    <title>鲸鲸世界</title>
+
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body{
+          height:2900px;
+          width:100%
+      }
+
+      /*导航栏整体样式*/
+      .tou{
+          position:fixed;
+          top:0;
+          left:0;
+          padding: 24px 100px;
+          width:100%;
+          display:flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: 0.5s;
+          box-shadow: 0 10px 10px 0 rgba(0,0,0,.2);
+          z-index: 999;
+      }
+
+       /*导航栏左侧样式*/
+      .logo{
+          position:relative;
+          font-size: 22px;
+          font-weight: 900;
+          letter-spacing: 1px;
+          color:rgb(223, 234, 242)
+      }
+
+      /*可用于替换的可爱表情：☾˚‧₊ ⋆︎   ･✦･*/
+      .logo::before{
+          content: '･✦･ ';
+          position:absolute;
+          left:-50px;
+          width:-15px;
+          height: 30px;
+      }
+
+
+      /*导航栏右侧标签样式*/
+      .biao{
+          position:relative;
+          display:flex;
+          justify-content:center;
+          align-content: center;
+          list-style: none;
+      }
+
+      .biao li{
+          position:relative;
+          font-size:x-large
+      }
+
+      .biao a{
+          position:relative;
+          margin:0 10px;
+          font-size: 18px;
+          font-family: 'Microsoft YaHei';
+          font-weight: bold;
+          color:rgb(223, 234, 242);
+          text-decoration: none;
+
+      }
+
+      .bian{
+          padding:15px 100px;
+          background-color: #b9420f;
+          opacity:0.95
+      }
+
+      .footer,.bian .logo, .tou.bian a{
+          color:rgb(252,247,247)
+      }
+
+      /*导航栏的触碰转换(变前与变后）*/
+      li a:hover {
+              color: #7ad6f0;
+          }
+
+      .biao a:hover {
+              color: #7ad6f0;
+          }
+
+
+      
+          /*右侧的条条*/
+          ::-webkit-scrollbar{
+          width: 12px;
+      }
+
+      ::-webkit-scrollbar-thumb{
+          
+      background: linear-gradient(#b9420f,#2cccc7);     
+      border-radius: 5px;
+        transition: 1s;
+      }
+      ::-webkit-scrollbar-thumb:hover{
+          background: linear-gradient(#2cccc7,#b9420f);     
+
+      }
+
+      body {
+          padding-bottom: 50px;
+          background-color: #b9420f;
+      }
+
+      
+      .footer {
+          position:relative;
+          left: 0px;
+          bottom: 0px;
+          width: 100%;
+          height: 160px;
+          background-color: #b9420f;
+          z-index: 9999;
+          justify-content: space-between;
+          align-items: center;
+          text-align:center;
+          line-height:center;
+      }
+
+      /*背景图样式*/
+      .beijing{
+            position:absolute;
+            top:0;
+            left: 0;
+            width:100%;
+            height: 500px;
+            min-width:1000px;
+            z-index:-10;
+            zoom:1;
+            background-color: #fff;
+            background-image: url(./image/音乐修改.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50%;
+        }
+
+
+
+        .CD1{
+    display: flex;
+    margin-bottom: 50px;
+    margin-left: 250px;
+
+}
+.CD1 .infor1{
+    margin-left: 150px;
+    margin-top: 0px;
+    margin-right: 250px;
+    line-height: 40px;
+    font-size: 30px;
+    padding:10px 20px;
+    text-align:left;
+    line-height: 46px;
+    font-weight: bold;
+    padding-bottom: 20px;
+
+    
+}
+ .infor1{
+  width:400px;
+  height: 300px;
+ }
+ 
+ .cover{
+  border-radius: 5px;
+  box-shadow: 0 0px 25px 0.5px rgba(77, 78, 80, 0.8);
+ }
+
+
+
+ /*空白框的格式*/
+ .kuangblank{
+            border-radius: 50px;
+                margin: auto;
+                width: 60%;
+                height:10px;
+                padding: 25px;
+                padding-left:140px;
+                padding-right:140px;
+                justify-content:center;
+                position:relative;
+        }
+
+      p{
+        color: antiquewhite; 
+        text-shadow: 2px 2px 4px #5f5e5e;
+      }
+
+
+
+  </style>
+
+
+   <!--！！！！！！！！！！！！！！！网站计时！！！！！！！！！！！！！！！！-->
+  <script>
+  function secondToDate(second) {
+      if (!second) {
+          return 0;
+      }
+      var time = new Array(0, 0, 0, 0, 0);
+      if (second >= 365 * 24 * 3600) {
+          time[0] = parseInt(second / (365 * 24 * 3600));
+          second %= 365 * 24 * 3600;
+      }
+      if (second >= 24 * 3600) {
+          time[1] = parseInt(second / (24 * 3600));
+          second %= 24 * 3600;
+      }
+      if (second >= 3600) {
+          time[2] = parseInt(second / 3600);
+          second %= 3600;
+      }
+      if (second >= 60) {
+          time[3] = parseInt(second / 60);
+          second %= 60;
+      }
+      if (second > 0) {
+          time[4] = second;
+      }
+      return time;
+  }</script>
+  <script type="text/javascript" language="javascript">
+  function setTime() {
+      var create_time = Math.round(new Date(Date.UTC(2023, 01, 24, 11, 42, 23)).getTime() / 1000);
+      var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+      currentTime = secondToDate((timestamp - create_time));
+      currentTimeHtml = '鲸鲸世界已经在可观测海域艰难运行了：' + currentTime[0] + '年 ' + currentTime[1] + '天 '
+              + currentTime[2] + '时 ' + currentTime[3] + '分 ' + currentTime[4]
+              + '秒';
+      document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+  }    setInterval(setTime, 1000);
+  </script>
+   <!--！！！！！！！！！！！！！！！网站计时！！！！！！！！！！！！！！！！-->
+
+
+
+
+  </head>
+
+
+  <body>
+    <div class="kuangblank"></div>
+    <div class="kuangblank"></div>
+    <div class="kuangblank"></div>
+    <div class="kuangblank"></div>
+
+
+    <h1 style="color: antiquewhite; text-shadow: 2px 2px 4px #000000;">
+      <br>来听一首歌吧！
+      <br>
+    </h1>
+    <!-- <h1>Music Player</h1> -->
+
+    <div class="music-container" id="music-container">
+      <div class="music-info">
+        <h4 id="title"></h4>
+        <div class="progress-container" id="progress-container">
+          <div class="progress" id="progress"></div>
+        </div>
+      </div>
+
+      <audio src="music/きっとまたいつか.mp3" id="audio"></audio>
+
+      <div class="img-container">
+        <img src="cover/きっとまたいつか.jpg" alt="music-cover" id="cover" />
+      </div>
+
+      <div class="navigation">
+        <button id="prev" class="action-btn">
+          <i class="fas fa-backward"></i>
+        </button>
+        <button id="play" class="action-btn action-btn-big">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="next" class="action-btn">
+          <i class="fas fa-forward"></i>
+
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+        <!--背景图-->
+        <div class="beijing"></div>
+
+        <!--导航栏-->
+        <div class="tou">
+            <sapn class="logo">鲸鲸世界。</sapn>
+            <ul class="biao">
+              <li><a href="./gulugulu.html">☾˚‧₊ ⋆︎ </a></li>
+              <li><a href="./yinyue.html">音乐</a></li>
+              <li><a href="./youxi.html">游戏</a></li>
+              <li><a href="./guanyu.html">关于</a></li>
+            </ul>
+        </div>
+    
+        <script>
+            window.addEventListener('scroll',function(){
+                let tou=document.querySelector('.tou');
+    
+                /* tou.classlist.toggle("bian",window.scrollY>0;*/
+                if(window.scrollY>0)
+                {
+                    tou.classList.add("bian");
+                }else{
+                    tou.classList.remove("bian");
+                }
+            })
+    
+    
+        </script>
+
+
+        <div class="kuangblank"></div>
+        <div class="kuangblank"></div>
+
+        <div class="CD1">
+          <img src="./cover/信号.jpg" width="300" height="300" class="cover">
+          <div class="infor1">
+              <p>信号<br>
+                <br>作词：鲸鲸
+                <br>作曲：鲸鲸
+                <br>编曲：刘柏锦
+                <br>演唱：鲸鲸</p>
+          </div>
+      </div>
+      <div class="kuangblank"></div>
+      <div class="kuangblank"></div>
+
+      <div class="CD1">
+        <img src="./cover/夜间出租车.jpg" width="300" height="300" class="cover">
+        <div class="infor1">
+            <p>夜间出租车<br>
+              <br>作词：ilem
+              <br>作曲：ilem
+              <br>演唱：萤川</p>
+        </div>
+    </div>
+    <div class="kuangblank"></div>
+    <div class="kuangblank"></div>
+
+    <div class="CD1">
+      <img src="./cover/きっとまたいつか.jpg" width="300" height="300" class="cover">
+      <div class="infor1">
+          <p>きっとまたいつ<br>
+            <br>作曲：DEPAPEPE
+            <br>演奏：DEPAPEPE</p>
+      </div>
+  </div>
+  <div class="kuangblank"></div>
+  <div class="kuangblank"></div>
+
+  <div class="CD1">
+    <img src="./cover/朧月.jpg" width="300" height="300" class="cover">
+    <div class="infor1">
+        <p>朧月<br>
+          <br>作词：minato（流星P）
+          <br>作曲：minato（流星P）
+          <br>演唱：初音ミク</p>
+    </div>
+</div>
+<div class="kuangblank"></div>
+<div class="kuangblank"></div>
+
+<div class="CD1">
+  <img src="./cover/我的秘密.jpg" width="300" height="300" class="cover
+  ">
+  <div class="infor1">
+      <p>我的秘密<br>
+        <br>作词：G.M.E.邓紫棋
+        <br>作曲：G.M.E.邓紫棋
+        <br>演唱：颜人中</p>
+  </div>
+</div>
+    
+
+<div class="kuangblank"></div>
+<div class="kuangblank"></div>
+
+    
+                <div class="footer">
+                    <p align="center">
+                        <br>
+                         再往下就是深海啦
+                        <br>
+                        <br>
+                        <span id="htmer_time"></span></font>
+                        <br>
+                        <br>
+                         Copyright © 2023 鲸鲸世界
+                        <br>
+                        <br>
+                    </p>
+                </div>
+  </body>
+</html>
